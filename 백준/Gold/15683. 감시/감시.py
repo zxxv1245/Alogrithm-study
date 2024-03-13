@@ -8,14 +8,17 @@ def check() :
         if cctv == 1 :
             nx,ny = x+dx[w],y+dy[w]
             while True :
-                if 0<=nx<N and 0<=ny<M and lst[nx][ny] == 0 and visited[nx][ny] == 0 :
-                    visited[nx][ny] = 1
-                    cnt += 1
-                    nx,ny = nx+dx[w],ny+dy[w]
-                elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                    nx, ny = nx + dx[w], ny + dy[w]
-                elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                    nx, ny = nx + dx[w], ny + dy[w]
+                if 0<=nx<N and 0<=ny<M :
+                    if lst[nx][ny] == 0 and visited[nx][ny] == 0 :
+                        visited[nx][ny] = 1
+                        cnt += 1
+                        nx,ny = nx+dx[w],ny+dy[w]
+                    elif visited[nx][ny] == 1:
+                        nx, ny = nx + dx[w], ny + dy[w]
+                    elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                        nx, ny = nx + dx[w], ny + dy[w]
+                    else :
+                        break
                 else :
                     break
         elif cctv == 2 :
@@ -23,28 +26,34 @@ def check() :
                 for a in [0,2] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        else:
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
+                        else :
                             break
             else :
                 for a in [1,3] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                            nx, ny = nx + dx[a], ny + dy[a]
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
                         else:
                             break
         elif cctv == 3 :
@@ -52,56 +61,68 @@ def check() :
                 for a in [0,1] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                            nx, ny = nx + dx[a], ny + dy[a]
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
                         else:
                             break
             elif w == 1 :
                 for a in [1,2] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                            nx, ny = nx + dx[a], ny + dy[a]
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
                         else:
                             break
             elif w == 2 :
                 for a in [2,3] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                            nx, ny = nx + dx[a], ny + dy[a]
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
                         else:
                             break
             elif w == 3 :
                 for a in [0,3] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                            nx, ny = nx + dx[a], ny + dy[a]
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
                         else:
                             break
         elif cctv == 4 :
@@ -109,70 +130,85 @@ def check() :
                 for a in [0,1,3] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                            nx, ny = nx + dx[a], ny + dy[a]
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
                         else:
                             break
             elif w == 1 :
                 for a in [0,1,2] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                            nx, ny = nx + dx[a], ny + dy[a]
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
                         else:
                             break
             elif w == 2 :
                 for a in [1,2,3] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                            nx, ny = nx + dx[a], ny + dy[a]
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
                         else:
                             break
             elif w == 3 :
                 for a in [0,2,3] :
                     nx, ny = x + dx[a], y + dy[a]
                     while True:
-                        if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                            visited[nx][ny] = 1
-                            cnt += 1
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                            nx, ny = nx + dx[a], ny + dy[a]
-                        elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5] :
-                            nx, ny = nx + dx[a], ny + dy[a]
+                        if 0 <= nx < N and 0 <= ny < M:
+                            if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                                visited[nx][ny] = 1
+                                cnt += 1
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif visited[nx][ny] == 1:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                                nx, ny = nx + dx[a], ny + dy[a]
+                            else:
+                                break
                         else:
                             break
         elif cctv == 5 :
             for a in range(4):
                 nx, ny = x + dx[a], y + dy[a]
                 while True:
-                    if 0 <= nx < N and 0 <= ny < M and lst[nx][ny] == 0 and visited[nx][ny] == 0:
-                        visited[nx][ny] = 1
-                        cnt += 1
-                        nx, ny = nx + dx[a], ny + dy[a]
-                    elif 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 1:
-                        nx, ny = nx + dx[a], ny + dy[a]
-                    elif 0 <= nx < N and 0 <= ny < M and lst[nx][ny] in [1, 2, 3, 4, 5]:
-                        nx, ny = nx + dx[a], ny + dy[a]
+                    if 0 <= nx < N and 0 <= ny < M:
+                        if lst[nx][ny] == 0 and visited[nx][ny] == 0:
+                            visited[nx][ny] = 1
+                            cnt += 1
+                            nx, ny = nx + dx[a], ny + dy[a]
+                        elif visited[nx][ny] == 1:
+                            nx, ny = nx + dx[a], ny + dy[a]
+                        elif lst[nx][ny] in [1, 2, 3, 4, 5]:
+                            nx, ny = nx + dx[a], ny + dy[a]
+                        else:
+                            break
                     else:
                         break
     return cnt
