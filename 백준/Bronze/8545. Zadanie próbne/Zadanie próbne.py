@@ -1,3 +1,1 @@
-A = input()
-aa = ''.join(list(reversed(A)))
-print(aa)
+print(''.join(list(reversed(input()))))
