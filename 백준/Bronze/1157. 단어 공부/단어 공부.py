@@ -1,20 +1,23 @@
-T = input().upper()
+word = input().upper()
+dict = dict()
 
-set_T = set()
+for a in word :
+    if a in dict :
+        dict[a] += 1
+    else :
+        dict[a] = 1
 
-for a in T :
-    set_T.add(a)
+max_dict = -21e8
+for i in dict :
+    if max_dict < dict[i] :
+        max_dict = dict[i]
 
-list_T = list(set_T)
-count_T = []
-for b in list_T :
-    count_T.append(T.count(b))
+lst = []
+for a in dict :
+    if dict[a] == max_dict :
+        lst.append(a)
 
-max_count_T = max(count_T)
-max_count_count_T = count_T.count(max_count_T)
-if max_count_count_T >= 2 :
+if len(lst) >= 2 :
     print('?')
-
 else :
-    max_count_T_index = count_T.index(max_count_T)
-    print(list_T[max_count_T_index])
+    print(lst[0])
